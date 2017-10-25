@@ -4,6 +4,7 @@
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:semantic="sap.f.semantic">
 
+	
 	<semantic:SemanticPage
 		id="page"
 		headerPinnable="false"
@@ -16,14 +17,25 @@
 		</semantic:titleHeading>
 
 		<semantic:headerContent>
+			<ObjectHeader
+				number="{
+					path: 'Price',
+					formatter: '.formatter.numberUnit'
+				}"
+				numberUnit="{CurrencyCode}">
+				<attributes>
+					<ObjectAttribute
+						text="{Name}"/>
+				</attributes>
+			</ObjectHeader>
+			<!--
 			<ObjectNumber
 				number="{
 					path: 'Price',
 					formatter: '.formatter.numberUnit'
 				}"
-				
 				unit="{CurrencyCode}"
-			/>
+			/>  -->
 		</semantic:headerContent>
 		
 		<semantic:sendEmailAction>
@@ -32,5 +44,7 @@
 		
 
 	</semantic:SemanticPage>
+	
+
 
 </mvc:View>

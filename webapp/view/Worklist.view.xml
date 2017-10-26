@@ -14,6 +14,39 @@
 		</semantic:titleHeading>
 
 		<semantic:content>
+			<IconTabBar
+				id="iconTabBar"
+				select="onQuickFilter"
+				expandable="false"
+				applyContentPadding="false">
+				<items>
+					<IconTabFilter
+						key="all"
+						showAll="true"
+						count="{i18n>worklistFilterProductsAllCount}"
+						text="{i18n>worklistFilterProductsAll}"/>
+					<IconTabSeparator/>
+					<IconTabFilter
+						key="cheap"
+						icon="sap-icon://waiver"
+						iconColor="Positive"
+						text="{i18n>worklistFilterCheap}"/>
+					<IconTabFilter
+						key="moderate"
+						icon="sap-icon://loan"
+						iconColor="Critical"
+						text="{i18n>worklistFilterModerate}"/>
+					<IconTabFilter
+						key="expensive"
+						icon="sap-icon://money-bills"
+						iconColor="Negative"
+						text="{i18n>worklistFilterExpensive}"/>
+				</items>
+				<content>
+					<!-- put the existing table here -->
+				
+			
+			
 			<Table
 				id="table"
 				width="auto"
@@ -32,7 +65,8 @@
 				busyIndicatorDelay="{worklistView>/tableBusyDelay}"
 				growing="true"
 				growingScrollToLoad="true"
-				updateFinished="onUpdateFinished">
+				updateFinished="onUpdateFinished"
+				>
 
 				<headerToolbar>
 					<Toolbar>
@@ -92,6 +126,8 @@
 					</ColumnListItem>
 				</items>
 			</Table>
+			</content>
+			</IconTabBar> 
 		</semantic:content>
 
 		<semantic:sendEmailAction>
